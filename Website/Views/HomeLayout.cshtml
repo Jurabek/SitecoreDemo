@@ -1,0 +1,16 @@
+﻿@model Sitecore.Mvc.Presentation.RenderingModel
+
+@{
+    Layout = "~/Views/MasterLayout.cshtml";
+}
+
+@Html.Sitecore().Placeholder("HeadContent")
+
+<div class="container content">
+    <div class="row">
+        <div class="col-sm-12">
+            @Html.Sitecore().Placeholder("Content")
+        </div>
+    </div>
+</div>
+@Html.Sitecore().Placeholder("FootContent")

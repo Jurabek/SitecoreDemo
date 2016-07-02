@@ -1,0 +1,46 @@
+﻿@using System.Linq
+@using System.Web.Mvc.Html
+@using Sitecore.Sites
+@using Sitecore.Data.Items
+
+@{
+    Layout = null;
+
+    var url = new Uri(Request.Url.AbsoluteUri);
+    var siteContext = SiteContextFactory.GetSiteContext(url.Host, url.PathAndQuery);
+    var homeItem = siteContext.Database.GetItem(siteContext.StartPath);
+    var searchResultsItem = homeItem.Axes.GetDescendants().FirstOrDefault(item => item.TemplateName == "Search Results Template");
+    var searchResultsItemUrl = string.Empty;
+    if (searchResultsItem != null)
+    {
+        searchResultsItemUrl = Sitecore.Links.LinkManager.GetItemUrl(searchResultsItem);
+    }
+}
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Welcome to Sitecore</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/App/directives/pagination.directive.js"></script>
+    <script src="~/App/app.js"></script>
+    <script src="~/App/services/content.search.service.js"></script>
+    <script src="~/App/controllers/content.search.controller.js"></script>
+    <script src="~/App/controllers/content.search.results.controller.js"></script>
+    <link href="~/bootstrap.css" rel="stylesheet" />
+    <style>
+        [ng-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+<body data-ng-app="app">
+    <input type="hidden" name="current-language" id="current-language" value="@SiteContext.Current.Language" />
+    <input type="hidden" name="search-results-item-url" id="search-results-item-url" value="@searchResultsItemUrl" />
+    @RenderBody()
+</body>
+</html>

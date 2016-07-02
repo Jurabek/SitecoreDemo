@@ -1,0 +1,17 @@
+# Ignore the following folders
+
+Code/SitecoreDemo.Web/SitecoreDemo.Web.Base/bin/
+
+Code/SitecoreDemo.Web/SitecoreDemo.Web.Base/obj/
+
+Code/SitecoreDemo.Web/SitecoreDemo.Web.ContentSearch/bin/
+
+Code/SitecoreDemo.Web/SitecoreDemo.Web.ContentSearch/obj/
+
+*.suo
+
+*.user
+
+Data/
+
+Databases/

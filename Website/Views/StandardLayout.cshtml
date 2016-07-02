@@ -1,0 +1,23 @@
+﻿@{
+    Layout = "~/Views/MasterLayout.cshtml";
+}
+
+@Html.Sitecore().Placeholder("HeadContent")
+<div class="container content">
+    <div class="row">
+        <div class="col-sm-3">
+            <!-- e.g. submenu -->
+        </div>
+        <div class="col-sm-9">
+            <div class="row">
+                <div class="col-lg-8 col-sm-12">
+                    @Html.Sitecore().Placeholder("Content")
+                </div>
+                <div class="col-lg-4 col-sm-12">
+                    @Html.Sitecore().Placeholder("RightContent")
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@Html.Sitecore().Placeholder("FootContent")

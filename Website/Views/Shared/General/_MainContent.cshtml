@@ -1,0 +1,9 @@
+﻿@using Sitecore.Data.Fields
+@using Sitecore.Data.Items
+
+@{
+    Item currentItem = Html.Sitecore().CurrentItem;
+}
+
+<h1>@Html.Raw(currentItem.Fields["Title"])</h1>
+<div>@Html.Raw(currentItem.Fields["Text"])</div>

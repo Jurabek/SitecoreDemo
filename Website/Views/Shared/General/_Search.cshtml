@@ -1,0 +1,8 @@
+﻿<div data-ng-controller="ContentSearchController">
+    <form name="searchForm" action="#" class="search-container">
+        <fieldset>
+            <input name="keyword" placeholder="keyword" ng-model="keyword" type="search" ng-minlength="8" required />
+            <button type="button" ng-click="searchClick()" ng-disabled="searchForm.keyword.$pristine || searchForm.keyword.$dirty && searchForm.keyword.$invalid">Search</button>
+        </fieldset>
+    </form>
+</div>
