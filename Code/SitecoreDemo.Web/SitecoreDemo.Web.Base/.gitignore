@@ -4,7 +4,6 @@
 /App_Data/
 /App_Config/Include/*.config.disabled
 /App_Config/Include/*.config.example
-/App_Config/Include/Sitecore.*.config
 /App_Config/Include/.Sitecore.*.config
 /App_Config/Include/Channel/Sitecore.*.config
 /App_Config/Include/ContentTesting/Sitecore.*.config*
