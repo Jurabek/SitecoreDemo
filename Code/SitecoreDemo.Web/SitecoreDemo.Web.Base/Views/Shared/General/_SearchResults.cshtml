@@ -1,5 +1,6 @@
 ﻿<div data-ng-controller="ContentSearchResultsController">
     <h3>You searched for "{{keyword}}"</h3>
+    <h4>Your search matched {{itemsTotal}} hits</h4> 
     <pagination data-ng-show="loaded"
                 current-page="currentPage"
                 items-per-page="12"
@@ -7,9 +8,9 @@
                 preceeding-pages="3"
                 following-pages="3"
                 change-page-function="changePage(page)"></pagination>
-    <ul data-ng-repeat="textPage in textPages">
-        <li>
-            <h3>{{textPage.Title}}</h3>
+    <ul class="list-group" data-ng-repeat="textPage in textPages">
+        <li class="list-group-item">
+            <h3 class="list-group-item-heading">{{textPage.Title}}</h3>
             <div>
                 {{textPage.Text}}
             </div>

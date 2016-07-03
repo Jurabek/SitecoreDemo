@@ -110,7 +110,6 @@
     <Content Include="App\app.js" />
     <Content Include="App\directives\pagination.directive.js" />
     <Content Include="App\services\content.search.service.js" />
-    <Content Include="bootstrap.css" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
