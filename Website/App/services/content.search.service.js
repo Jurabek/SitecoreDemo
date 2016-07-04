@@ -12,20 +12,20 @@
             },
 
             lang: function () {
-                var domElement = document.querySelector('#current-language');
+                var domElement = document.querySelector('body');
                 var $domElement;
                 if (domElement) {
                     var $domElement = angular.element(domElement);
-                   return $domElement.val();
+                    return $domElement.attr('data-current-language');
                 }
             },
 
             searchResultsUrl: function () {
-                var domElement = document.querySelector('#search-results-item-url');
+                var domElement = document.querySelector('body');
                 var $domElement;
                 if (domElement) {
                     var $domElement = angular.element(domElement);
-                    return $domElement.val();
+                    return $domElement.attr('data-search-results-item-url');
                 }
             },
         };

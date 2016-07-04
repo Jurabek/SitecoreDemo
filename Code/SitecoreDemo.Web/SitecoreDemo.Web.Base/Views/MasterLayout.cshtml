@@ -32,11 +32,10 @@
         }
     </style>
 </head>
-<body data-ng-app="app">
-    <input type="hidden" name="current-language" id="current-language" value="@SiteContext.Current.Language" />
-    <input type="hidden" name="search-results-item-url" id="search-results-item-url" value="@searchResultsItemUrl" />
+<body data-ng-app="app" data-current-language="@SiteContext.Current.Language" data-search-results-item-url="@searchResultsItemUrl">
     @RenderBody()
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.2/js/tether.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
     <script src="~/Scripts/angular.js"></script>
     <script src="~/App/directives/pagination.directive.js"></script>
