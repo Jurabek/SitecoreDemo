@@ -15,7 +15,7 @@
                     </a>
                 </li>
                 <li data-ng-show="hasPrevious" class="page-item"><a class="page-link" href="#" data-ng-click="changePage({page: (currentPage - 3)})">...</a></li>
-                <li data-ng-repeat="number in count()" data-ng-class="isActive(number)" class="page-item"><a class="page-link" href="#" data-ng-click="changePage({page: number})">{{number}}</a></li>
+                <li ng-cloak data-ng-repeat="number in count()" data-ng-class="isActive(number)" class="page-item"><a class="page-link" href="#" data-ng-click="changePage({page: number})">{{number}}</a></li>
                 <li data-ng-show="hasNext" class="page-item"><a class="page-link" href="#" data-ng-click="changePage({page: (currentPage + 3)})">...</a></li>
                 <li class="page-item" data-ng-show="currentPage < (pageCount - 2)">
                     <a class="page-link" href="#" aria-label="Next" ng-click="changePage({page: (currentPage + 1)})">
