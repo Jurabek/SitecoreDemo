@@ -105,6 +105,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App\app.config.js" />
     <Content Include="App\controllers\content.search.controller.js" />
     <Content Include="App\controllers\content.search.results.controller.js" />
     <Content Include="App\app.js" />
