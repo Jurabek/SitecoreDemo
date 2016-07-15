@@ -111,6 +111,8 @@
     <Content Include="app\main.js" />
     <Content Include="app\pagination.component.js" />
     <Content Include="app\search-form.component.js" />
+    <Content Include="app\search-object.js" />
+    <Content Include="app\search-result.js" />
     <Content Include="app\search-results.component.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -148,6 +150,8 @@
     <Content Include="app\pagination.component.js.map" />
     <Content Include="app\search-form.component.js.map" />
     <Content Include="app\search-results.component.js.map" />
+    <Content Include="app\search-object.js.map" />
+    <Content Include="app\search-result.js.map" />
     <None Include="Properties\PublishProfiles\Development.pubxml" />
     <Content Include="Views\MasterLayout.cshtml" />
     <Content Include="Views\HomeLayout.cshtml" />
@@ -175,6 +179,8 @@
     <TypeScriptCompile Include="app\main.ts" />
     <TypeScriptCompile Include="app\pagination.component.ts" />
     <TypeScriptCompile Include="app\search-form.component.ts" />
+    <TypeScriptCompile Include="app\search-object.ts" />
+    <TypeScriptCompile Include="app\search-result.ts" />
     <TypeScriptCompile Include="app\search-results.component.ts" />
     <TypeScriptCompile Include="e2e\app.e2e-spec.ts" />
   </ItemGroup>
