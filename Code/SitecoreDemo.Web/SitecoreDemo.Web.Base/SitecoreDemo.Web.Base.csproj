@@ -105,6 +105,13 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\app.component.js" />
+    <Content Include="app\app.component.spec.js" />
+    <Content Include="app\content-search.service.js" />
+    <Content Include="app\main.js" />
+    <Content Include="app\pagination.component.js" />
+    <Content Include="app\search-form.component.js" />
+    <Content Include="app\search-results.component.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="index.html" />
@@ -134,6 +141,13 @@
     <Content Include="CHANGELOG.md" />
     <Content Include="Dockerfile" />
     <Content Include="package.json" />
+    <Content Include="app\app.component.js.map" />
+    <Content Include="app\app.component.spec.js.map" />
+    <Content Include="app\content-search.service.js.map" />
+    <Content Include="app\main.js.map" />
+    <Content Include="app\pagination.component.js.map" />
+    <Content Include="app\search-form.component.js.map" />
+    <Content Include="app\search-results.component.js.map" />
     <None Include="Properties\PublishProfiles\Development.pubxml" />
     <Content Include="Views\MasterLayout.cshtml" />
     <Content Include="Views\HomeLayout.cshtml" />
@@ -157,7 +171,11 @@
   <ItemGroup>
     <TypeScriptCompile Include="app\app.component.spec.ts" />
     <TypeScriptCompile Include="app\app.component.ts" />
+    <TypeScriptCompile Include="app\content-search.service.ts" />
     <TypeScriptCompile Include="app\main.ts" />
+    <TypeScriptCompile Include="app\pagination.component.ts" />
+    <TypeScriptCompile Include="app\search-form.component.ts" />
+    <TypeScriptCompile Include="app\search-results.component.ts" />
     <TypeScriptCompile Include="e2e\app.e2e-spec.ts" />
   </ItemGroup>
   <ItemGroup>

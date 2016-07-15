@@ -1,7 +1,12 @@
 import { Component } from '@angular/core';
+import { SearchFormComponent } from './search-form.component';
+import { ContentSearchService } from './content-search.service';
 
 @Component({
-    selector: 'my-app',
-    template: '<h1>My First Angular 2 App</h1>'
+    selector: 'app',
+    template: '<search-form></search-form>',
+    directives: [SearchFormComponent],
+    providers: [ContentSearchService]
+
 })
 export class AppComponent { }
