@@ -10,7 +10,8 @@ import { ContentSearchService } from './content-search.service';
           <button (click)="searchClick()" type="button">Search</button>
       </fieldset>
       </div>
-  `
+  `,
+  providers: [ContentSearchService]
 })
 
 export class SearchFormComponent implements OnInit {

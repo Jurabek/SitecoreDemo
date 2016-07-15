@@ -5,16 +5,6 @@
 
 @{
     Layout = null;
-
-    var url = new Uri(Request.Url.AbsoluteUri);
-    var siteContext = SiteContextFactory.GetSiteContext(url.Host, url.PathAndQuery);
-    var homeItem = siteContext.Database.GetItem(siteContext.StartPath);
-    var searchResultsItem = homeItem.Axes.GetDescendants().FirstOrDefault(item => item.TemplateName == "Search Results Template");
-    var searchResultsItemUrl = string.Empty;
-    if (searchResultsItem != null)
-    {
-        searchResultsItemUrl = Sitecore.Links.LinkManager.GetItemUrl(searchResultsItem);
-    }
 }
 
 <!DOCTYPE html>
@@ -26,23 +16,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
-    <style>
-        [ng-cloak] {
-            display: none;
-        }
-    </style>
+    <!-- Polyfill(s) for older browsers -->
+    <script src="~/node_modules/core-js/client/shim.min.js"></script>
+    <script src="~/node_modules/zone.js/dist/zone.js"></script>
+    <script src="~/node_modules/reflect-metadata/Reflect.js"></script>
+    <script src="~/node_modules/systemjs/dist/system.src.js"></script>
+    <script src="~/systemjs.config.js"></script>
+    <script>
+        System.import('app').catch(function (err) { console.error(err); });
+    </script>
 </head>
-<body data-ng-app="app" data-current-language="@SiteContext.Current.Language" data-search-results-item-url="@searchResultsItemUrl">
+<body>
     @RenderBody()
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.2/js/tether.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
-    <script src="~/Scripts/angular.js"></script>
-    <script src="~/App/directives/pagination.directive.js"></script>
-    <script src="~/App/app.js"></script>
-    <script src="~/App/config/app.config.js"></script>
-    <script src="~/App/services/content.search.service.js"></script>
-    <script src="~/App/controllers/content.search.controller.js"></script>
-    <script src="~/App/controllers/content.search.results.controller.js"></script>
 </body>
 </html>

@@ -1,8 +1,17 @@
-﻿<div data-ng-controller="ContentSearchController">
-    <form name="searchForm" action="#" class="search-container">
-        <fieldset>
-            <input name="keyword" placeholder="keyword" ng-model="keyword" type="search" ng-minlength="8" required />
-            <button type="button" ng-click="searchClick()" ng-disabled="searchForm.keyword.$pristine || searchForm.keyword.$dirty && searchForm.keyword.$invalid">Search</button>
-        </fieldset>
-    </form>
-</div>
+﻿@using System.Linq
+@using System.Web.Mvc.Html
+@using Sitecore.Sites
+@using Sitecore.Data.Items
+
+@{
+    var url = new Uri(Request.Url.AbsoluteUri);
+    var siteContext = SiteContextFactory.GetSiteContext(url.Host, url.PathAndQuery);
+    var homeItem = siteContext.Database.GetItem(siteContext.StartPath);
+    var searchResultsItem = homeItem.Axes.GetDescendants().FirstOrDefault(item => item.TemplateName == "Search Results Template");
+    if (searchResultsItem != null)
+    {
+        var searchResultsItemUrl = Sitecore.Links.LinkManager.GetItemUrl(searchResultsItem);
+        <search-form data-current-language="@SiteContext.Current.Language" data-search-results-item-url="@searchResultsItemUrl"></search-form>
+    }
+}
+
