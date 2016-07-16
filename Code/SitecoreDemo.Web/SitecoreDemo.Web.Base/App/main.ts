@@ -3,6 +3,6 @@ import { XHRBackend } from '@angular/http';
 import { bootstrap }    from '@angular/platform-browser-dynamic';
 import { HTTP_PROVIDERS } from '@angular/http';
 
-import { SearchFormComponent } from './search-form.component';
+import { AppComponent } from './app.component';
 
-bootstrap(SearchFormComponent, [HTTP_PROVIDERS]);
+bootstrap(AppComponent, [HTTP_PROVIDERS]);

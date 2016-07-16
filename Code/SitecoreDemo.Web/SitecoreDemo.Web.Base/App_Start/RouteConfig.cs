@@ -17,6 +17,11 @@ namespace SitecoreDemo.Web.Base
                 "GetTextPages",
                 "textdata-result/GetTextPages",
                 new { controller = "ContentSearch", action = "GetTextPages" });
+
+            routes.MapRoute(
+               "GetCurrentLanguage",
+               "textdata-result/GetCurrentLanguage",
+               new { controller = "ContentSearch", action = "GetCurrentLanguage" });
         }
     }
 }

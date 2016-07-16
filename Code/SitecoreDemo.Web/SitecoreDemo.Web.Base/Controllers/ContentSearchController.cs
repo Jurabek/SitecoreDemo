@@ -8,6 +8,7 @@ using SitecoreDemo.Web.ContentSearch;
 using SitecoreDemo.Web.ContentSearch.Search;
 using SitecoreDemo.Web.ContentSearch.SearchResultTypes;
 using SitecoreDemo.Web.ContentSearch.Extensions;
+using Sitecore.Sites;
 
 namespace SitecoreDemo.Web.Base.Controllers
 {
@@ -24,6 +25,17 @@ namespace SitecoreDemo.Web.Base.Controllers
                 textPages = contentSearchResultItems.Skip(pageIndex * 12).Take(12).ToTextPageItems(),
                 itemsTotal = contentSearchResultItems.Count(),
                 pagesTotal = contentSearchResultItems.Count() % 12 == 0 ? contentSearchResultItems.Count() / 12 : (contentSearchResultItems.Count() / 12) + 1
+            };
+
+            return this.Json(response, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpGet]
+        public ActionResult GetCurrentLanguage()
+        {
+            var response = new
+            {
+                currentLanguage = SiteContext.Current.Language
             };
 
             return this.Json(response, JsonRequestBehavior.AllowGet);

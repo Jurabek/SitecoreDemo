@@ -114,6 +114,7 @@
     <Content Include="app\search-object.js" />
     <Content Include="app\search-result.js" />
     <Content Include="app\search-results.component.js" />
+    <Content Include="app\text-page-result.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="index.html" />
@@ -152,6 +153,7 @@
     <Content Include="app\search-results.component.js.map" />
     <Content Include="app\search-object.js.map" />
     <Content Include="app\search-result.js.map" />
+    <Content Include="app\text-page-result.js.map" />
     <None Include="Properties\PublishProfiles\Development.pubxml" />
     <Content Include="Views\MasterLayout.cshtml" />
     <Content Include="Views\HomeLayout.cshtml" />
@@ -161,7 +163,6 @@
     <Content Include="Views\Shared\General\_MainContent.cshtml" />
     <None Include="Properties\PublishProfiles\Release.pubxml" />
     <Content Include="Views\Shared\General\_SearchResults.cshtml" />
-    <Content Include="Views\Shared\General\_Pagination.cshtml" />
     <Content Include="tsconfig.json" />
     <Content Include="tslint.json" />
     <Content Include="typings.json" />
@@ -182,6 +183,7 @@
     <TypeScriptCompile Include="app\search-object.ts" />
     <TypeScriptCompile Include="app\search-result.ts" />
     <TypeScriptCompile Include="app\search-results.component.ts" />
+    <TypeScriptCompile Include="app\text-page-result.ts" />
     <TypeScriptCompile Include="e2e\app.e2e-spec.ts" />
   </ItemGroup>
   <ItemGroup>

@@ -1,5 +1,7 @@
+import { TextPageResult } from './text-page-result';
+
 export class SearchResult {
-  Text: string;
-  Title: string;
-  Url: string;
+  textPages: TextPageResult[];
+  itemsTotal: number;
+  pagesTotal: number;
 }
