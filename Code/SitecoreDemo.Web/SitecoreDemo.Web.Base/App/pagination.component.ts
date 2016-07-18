@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
+import { TextPageResult } from './text-page-result';
 
 @Component({
   selector: 'pagination',
   template: `
   <div class="text-md-center">
-      <nav>
+      <nav *ngIf="textPages">
           <ul class="pagination">
               <li class="page-item">
                   <a class="page-link" href="#" aria-label="First">
@@ -36,7 +37,6 @@ import { Component } from '@angular/core';
   </div>
   `
 })
-
 export class PaginationComponent {
-
+  textPages: TextPageResult[];
 }

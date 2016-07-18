@@ -20,7 +20,11 @@ export class ContentSearchService {
       .catch(this.handleError);
   }
 
-  searchResultsUrl() {
+  searchResultsUrl(): Promise<string> {
+    return this.http.get('/textdata-result/GetSearchResultsUrl')
+      .toPromise()
+      .then(response => response.json().searchResultsItemUrl)
+      .catch(this.handleError);
   }
 
   textPages(searchObject: SearchObject) {

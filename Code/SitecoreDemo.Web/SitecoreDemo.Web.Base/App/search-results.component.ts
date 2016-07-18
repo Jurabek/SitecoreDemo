@@ -1,52 +1,60 @@
 import { Component, OnInit } from '@angular/core';
-import { SearchResult } from './search-result';
 import { SearchObject } from './search-object';
+import { TextPageResult } from './text-page-result';
 import { ContentSearchService } from './content-search.service';
 
 @Component({
   selector: 'search-results',
   template: `
-    <ul class="list-group">
+      <ul class="list-group">
         <li class="list-group-item" *ngFor="let textPage of textPages">
             <h3 class="list-group-item-heading">{{textPage.Title}}</h3>
             <div>
               {{textPage.Text}}
-            </div>
-            <div>
-                <a target="_self" [href]="[textPage.Url]"></a>
+              <div>
+                  <a target="_self" [href]="[textPage.Url]">{{textPage.Title}}</a>
+              </div>
             </div>
         </li>
-    </ul>
-  `
+      </ul>
+  `,
+  providers: [ContentSearchService]
 })
-
 export class SearchResultsComponent implements OnInit {
-  searchResults: any;
-  textPages: SearchResult[];
+  textPages: TextPageResult[];
   itemsTotal: number;
   pagesTotal: number;
   error: any;
   searchObject: SearchObject;
+  lang: string;
+  keyword = '';
+  sub: any;
 
   constructor(
     private contentSearchService: ContentSearchService) {
   }
 
   ngOnInit() {
-    this.searchObject = new SearchObject();
-    this.searchObject.page = 1;
-    this.searchObject.keyword = 'marketers';
-    this.getSearchResults(this.searchObject);
-    if (this.searchResults != null) {
-      this.textPages = this.searchResults.textPages;
-      this.itemsTotal = this.searchResults.itemsTotal;
-      this.pagesTotal = this.searchResults.pagesTotal;
+    if (this.keyword !== '') {
+      this.contentSearchService.lang()
+        .then(lang => {
+          this.lang = lang;
+          this.searchObject = new SearchObject();
+          this.searchObject.lang = this.lang;
+          this.searchObject.keyword = this.keyword;
+          this.searchObject.page = 1;
+          this.getSearchResults(this.searchObject);
+        });
     }
-
   }
 
   getSearchResults(searchObject: SearchObject) {
     this.contentSearchService.textPages(searchObject)
-      .then(searchResults => this.searchResults = searchResults);
+      .then(searchResults => {
+        this.textPages = searchResults.textPages;
+        this.pagesTotal = searchResults.pagesTotal;
+        this.itemsTotal = searchResults.itemsTotal;
+      });
   }
+
 }

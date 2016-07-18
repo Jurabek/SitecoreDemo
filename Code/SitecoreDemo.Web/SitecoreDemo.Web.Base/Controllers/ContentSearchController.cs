@@ -41,5 +41,26 @@ namespace SitecoreDemo.Web.Base.Controllers
             return this.Json(response, JsonRequestBehavior.AllowGet);
         }
 
+        [HttpGet]
+        public ActionResult GetSearchResultsUrl()
+        {
+            var searchResultsItemUrl = string.Empty;
+            var url = new Uri(Request.Url.AbsoluteUri);
+            var siteContext = SiteContextFactory.GetSiteContext(url.Host, url.PathAndQuery);
+            var homeItem = siteContext.Database.GetItem(siteContext.StartPath);
+            var searchResultsItem = homeItem.Axes.GetDescendants().FirstOrDefault(item => item.TemplateName == "Search Results Template");
+            if (searchResultsItem != null)
+            {
+                searchResultsItemUrl = Sitecore.Links.LinkManager.GetItemUrl(searchResultsItem);
+            }
+
+            var response = new
+            {
+                searchResultsItemUrl = searchResultsItemUrl
+            };
+
+            return this.Json(response, JsonRequestBehavior.AllowGet);
+        }
+
     }
 }
