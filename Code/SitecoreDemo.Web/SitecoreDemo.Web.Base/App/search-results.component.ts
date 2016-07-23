@@ -24,18 +24,17 @@ export class SearchResultsComponent implements OnInit {
   textPages: TextPageResult[];
   itemsTotal: number;
   pagesTotal: number;
-  error: any;
   searchObject: SearchObject;
   lang: string;
-  keyword = '';
-  sub: any;
+  keyword: string;
 
   constructor(
     private contentSearchService: ContentSearchService) {
   }
 
   ngOnInit() {
-    if (this.keyword !== '') {
+    this.keyword = this.getQueryStringValue();
+    if (this.keyword !== '' && this.keyword !== undefined) {
       this.contentSearchService.lang()
         .then(lang => {
           this.lang = lang;
@@ -55,6 +54,10 @@ export class SearchResultsComponent implements OnInit {
         this.pagesTotal = searchResults.pagesTotal;
         this.itemsTotal = searchResults.itemsTotal;
       });
+  }
+
+  private getQueryStringValue() {
+    return decodeURIComponent(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + encodeURIComponent('q').replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"));
   }
 
 }

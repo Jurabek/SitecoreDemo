@@ -7,21 +7,20 @@ import { Headers, Http } from '@angular/http';
 
 @Injectable()
 export class ContentSearchService {
-  private actionUrl = '/textdata-result/GetTextPages';
 
   constructor(
     private elementRef: ElementRef, private http: Http) {
   }
 
   lang(): Promise<string> {
-    return this.http.get('/textdata-result/GetCurrentLanguage')
+    return this.http.get('/textdata-result/getcurrentlanguage')
       .toPromise()
       .then(response => response.json().currentLanguage)
       .catch(this.handleError);
   }
 
   searchResultsUrl(): Promise<string> {
-    return this.http.get('/textdata-result/GetSearchResultsUrl')
+    return this.http.get('/textdata-result/getsearchresultsurl')
       .toPromise()
       .then(response => response.json().searchResultsItemUrl)
       .catch(this.handleError);
@@ -33,7 +32,7 @@ export class ContentSearchService {
     });
 
     return this.http
-      .post(this.actionUrl, JSON.stringify(searchObject), { headers: headers })
+      .post('/textdata-result/gettextpages', JSON.stringify(searchObject), { headers: headers })
       .toPromise()
       .then(response => response.json())
       .catch(this.handleError);

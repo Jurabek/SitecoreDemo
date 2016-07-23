@@ -6,7 +6,10 @@ import { SearchFormComponent } from './search-form.component';
 import { SearchResultsComponent } from './search-results.component';
 import { PaginationComponent } from './pagination.component';
 
-bootstrap(AppComponent, [HTTP_PROVIDERS]);
-bootstrap(SearchFormComponent, [HTTP_PROVIDERS]);
+//bootstrap(AppComponent, [HTTP_PROVIDERS]);
+bootstrap(SearchFormComponent,
+  [
+    HTTP_PROVIDERS
+  ]);
 bootstrap(SearchResultsComponent, [HTTP_PROVIDERS]);
-bootstrap(PaginationComponent, [HTTP_PROVIDERS]);
+//bootstrap(PaginationComponent, [HTTP_PROVIDERS]);

@@ -1,4 +1,4 @@
-import { Component, Input, EventEmitter, Output, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ContentSearchService } from './content-search.service';
 
 @Component({
@@ -13,8 +13,6 @@ import { ContentSearchService } from './content-search.service';
 })
 export class SearchFormComponent implements OnInit {
   @Input() keyword: string;
-  @Output() search = new EventEmitter();
-  performingSearch = false;
   searchResultsUrl: string;
 
   constructor(
@@ -22,11 +20,12 @@ export class SearchFormComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.contentSearchService.searchResultsUrl().then(searchResultsUrl => this.searchResultsUrl = searchResultsUrl);
+    this.contentSearchService.searchResultsUrl().then(searchResultsUrl => {
+      this.searchResultsUrl = searchResultsUrl
+    });
   }
 
   searchClick() {
-    this.performingSearch = true;
     window.location.href = this.searchResultsUrl + '?q=' + encodeURIComponent(this.keyword);
   }
 }
