@@ -8,26 +8,26 @@ import { TextPageResult } from './text-page-result';
       <nav>
           <ul class="pagination">
               <li class="page-item" *ngIf="currentPage > 1">
-                  <a class="page-link" href="#" aria-label="First" (click)="changePage(1, $event)">
+                  <a class="page-link" [href]="" aria-label="First" (click)="changePage(1, $event)">
                       <span aria-hidden="true">&laquo;</span>
                       <span class="sr-only">First</span>
                   </a>
               </li>
               <li class="page-item" *ngIf="currentPage > 2">
-                  <a class="page-link" href="#" aria-label="Previous" (click)="changePage(currentPage-1, $event)">
+                  <a class="page-link" [href]="" aria-label="Previous" (click)="changePage(currentPage-1, $event)">
                       <span aria-hidden="true">&laquo;</span>
                       <span class="sr-only">Previous</span>
                   </a>
               </li>
-              <li [class.active]="page === currentPage" *ngFor="let page of pages" class="page-item"><a class="page-link" href="#" (click)="changePage(page, $event)">{{page}}</a></li>
+              <li [class.active]="page === currentPage" *ngFor="let page of pages" class="page-item"><a class="page-link" [href]="" (click)="changePage(page, $event)">{{page}}</a></li>
               <li class="page-item" *ngIf="currentPage < (pageCount - 2)">
-                  <a class="page-link" href="#" aria-label="Next" (click)="changePage(currentPage+1, $event)">
+                  <a class="page-link" [href]="" aria-label="Next" (click)="changePage(currentPage+1, $event)">
                       <span aria-hidden="true">&raquo;</span>
                       <span class="sr-only">Next</span>
                   </a>
               </li>
               <li class="page-item" *ngIf="currentPage < pageCount">
-                  <a class="page-link" href="#" aria-label="Last" (click)="changePage(pageCount, $event)">
+                  <a class="page-link" [href]="" aria-label="Last" (click)="changePage(pageCount, $event)">
                       <span aria-hidden="true">&raquo;</span>
                       <span class="sr-only">Last</span>
                   </a>

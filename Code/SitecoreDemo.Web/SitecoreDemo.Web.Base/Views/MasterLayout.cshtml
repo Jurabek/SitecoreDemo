@@ -1,9 +1,4 @@
-﻿@using System.Linq
-@using System.Web.Mvc.Html
-@using Sitecore.Sites
-@using Sitecore.Data.Items
-
-@{
+﻿@{
     Layout = null;
 }
 
@@ -11,6 +6,7 @@
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
+    <base href="/">
     <meta name="viewport" content="width=device-width" />
     <title>Welcome to Sitecore</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -28,6 +24,5 @@
 </head>
 <body>
     @RenderBody()
-    <app></app>
 </body>
 </html>
