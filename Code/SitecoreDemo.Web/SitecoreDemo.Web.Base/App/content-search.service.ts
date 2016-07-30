@@ -1,6 +1,5 @@
 import { ElementRef, Injectable } from '@angular/core';
 import { TextPageResult } from './text-page-result';
-import { SearchResult } from './search-result';
 import { SearchObject } from './search-object';
 import 'rxjs/add/operator/toPromise';
 import { Headers, Http } from '@angular/http';
