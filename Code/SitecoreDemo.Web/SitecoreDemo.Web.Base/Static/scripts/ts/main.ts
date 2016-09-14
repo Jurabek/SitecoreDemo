@@ -8,8 +8,8 @@ import { SearchResultsComponent } from './App/search-results.component';
 
 // bootstrap(AppComponent, [HTTP_PROVIDERS]);
 bootstrap(SearchFormComponent,
-  [
-    HTTP_PROVIDERS
-  ]);
+    [
+        HTTP_PROVIDERS
+    ]);
 bootstrap(SearchResultsComponent, [HTTP_PROVIDERS]);
 // bootstrap(PaginationComponent, [HTTP_PROVIDERS]);

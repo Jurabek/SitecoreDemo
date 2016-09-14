@@ -1,8 +1,8 @@
 import { Component } from 'angular2/core';
 
 @Component({
-  selector: 'app',
-  template: `
+    selector: 'app',
+    template: `
 
     `
 })
