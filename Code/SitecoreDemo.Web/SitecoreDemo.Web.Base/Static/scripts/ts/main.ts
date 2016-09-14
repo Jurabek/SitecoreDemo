@@ -2,9 +2,9 @@
 import { HTTP_PROVIDERS } from 'angular2/http';
 
 // import { AppComponent } from './App/app.component';
-import { SearchFormComponent } from './App/search-form.component';
-import { SearchResultsComponent } from './App/search-results.component';
-// import { PaginationComponent } from './App/pagination.component';
+import { SearchFormComponent } from './ContentSearch/search-form.component';
+import { SearchResultsComponent } from './ContentSearch/search-results.component';
+// import { PaginationComponent } from './ContentSearch/pagination.component';
 
 // bootstrap(AppComponent, [HTTP_PROVIDERS]);
 bootstrap(SearchFormComponent,

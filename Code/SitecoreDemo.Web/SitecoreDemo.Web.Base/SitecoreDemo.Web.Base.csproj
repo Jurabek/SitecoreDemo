@@ -149,13 +149,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="Static\scripts\ts\App\app.component.ts" />
-    <TypeScriptCompile Include="Static\scripts\ts\App\content-search.service.ts" />
-    <TypeScriptCompile Include="Static\scripts\ts\App\pagination.component.ts" />
-    <TypeScriptCompile Include="Static\scripts\ts\App\search-form.component.ts" />
-    <TypeScriptCompile Include="Static\scripts\ts\App\search-object.ts" />
-    <TypeScriptCompile Include="Static\scripts\ts\App\search-results.component.ts" />
-    <TypeScriptCompile Include="Static\scripts\ts\App\text-page-result.ts" />
+    <TypeScriptCompile Include="Static\scripts\ts\ContentSearch\app.component.ts" />
+    <TypeScriptCompile Include="Static\scripts\ts\ContentSearch\content-search.service.ts" />
+    <TypeScriptCompile Include="Static\scripts\ts\ContentSearch\pagination.component.ts" />
+    <TypeScriptCompile Include="Static\scripts\ts\ContentSearch\search-form.component.ts" />
+    <TypeScriptCompile Include="Static\scripts\ts\ContentSearch\search-object.ts" />
+    <TypeScriptCompile Include="Static\scripts\ts\ContentSearch\search-results.component.ts" />
+    <TypeScriptCompile Include="Static\scripts\ts\ContentSearch\text-page-result.ts" />
     <TypeScriptCompile Include="Static\scripts\ts\main.ts" />
   </ItemGroup>
   <ItemGroup>
