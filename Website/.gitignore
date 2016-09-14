@@ -42,6 +42,7 @@
 /[Dd]efault*
 /Global.asax
 /Web.config.Oracle
+/Web.config
 /webedit.css
 
 .idea

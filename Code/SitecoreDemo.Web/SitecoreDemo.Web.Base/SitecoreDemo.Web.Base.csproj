@@ -106,24 +106,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="app\app.component.js" />
-    <Content Include="app\app.component.spec.js" />
-    <Content Include="app\content-search.service.js" />
-    <Content Include="app\main.js" />
-    <Content Include="app\pagination.component.js" />
-    <Content Include="app\search-form.component.js" />
-    <Content Include="app\search-object.js" />
-    <Content Include="app\search-results.component.js" />
-    <Content Include="app\text-page-result.js" />
-    <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="index.html" />
-    <Content Include="karma-test-shim.js" />
-    <Content Include="karma.conf.js" />
-    <Content Include="protractor.config.js" />
-    <Content Include="styles.css" />
-    <Content Include="systemjs.config.js" />
-    <Content Include="wallaby.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -139,20 +122,6 @@
     <Content Include="App_Config\Include\Sitecore.ContentSearch.Lucene.Index.Master.config" />
     <Content Include="App_Config\Include\Sitecore.ContentSearch.Lucene.Index.Web.config" />
     <Content Include=".gitignore" />
-    <Content Include=".dockerignore" />
-    <Content Include=".editorconfig" />
-    <Content Include="CHANGELOG.md" />
-    <Content Include="Dockerfile" />
-    <Content Include="package.json" />
-    <Content Include="app\app.component.js.map" />
-    <Content Include="app\app.component.spec.js.map" />
-    <Content Include="app\content-search.service.js.map" />
-    <Content Include="app\main.js.map" />
-    <Content Include="app\pagination.component.js.map" />
-    <Content Include="app\search-form.component.js.map" />
-    <Content Include="app\search-results.component.js.map" />
-    <Content Include="app\search-object.js.map" />
-    <Content Include="app\text-page-result.js.map" />
     <None Include="Properties\PublishProfiles\Development.pubxml" />
     <Content Include="Views\MasterLayout.cshtml" />
     <Content Include="Views\HomeLayout.cshtml" />
@@ -162,27 +131,12 @@
     <Content Include="Views\Shared\General\_MainContent.cshtml" />
     <None Include="Properties\PublishProfiles\Release.pubxml" />
     <Content Include="Views\Shared\General\_SearchResults.cshtml" />
-    <Content Include="tsconfig.json" />
-    <Content Include="tslint.json" />
-    <Content Include="typings.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <TypeScriptCompile Include="app\app.component.spec.ts" />
-    <TypeScriptCompile Include="app\app.component.ts" />
-    <TypeScriptCompile Include="app\content-search.service.ts" />
-    <TypeScriptCompile Include="app\main.ts" />
-    <TypeScriptCompile Include="app\pagination.component.ts" />
-    <TypeScriptCompile Include="app\search-form.component.ts" />
-    <TypeScriptCompile Include="app\search-object.ts" />
-    <TypeScriptCompile Include="app\search-results.component.ts" />
-    <TypeScriptCompile Include="app\text-page-result.ts" />
-    <TypeScriptCompile Include="e2e\app.e2e-spec.ts" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SitecoreDemo.Web.ContentSearch\SitecoreDemo.Web.ContentSearch.csproj">
