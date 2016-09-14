@@ -107,6 +107,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <None Include="gulpfile.js" />
+    <Content Include="Static\scripts\js\systemjs.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -122,15 +124,17 @@
     <Content Include="App_Config\Include\Sitecore.ContentSearch.Lucene.Index.Master.config" />
     <Content Include="App_Config\Include\Sitecore.ContentSearch.Lucene.Index.Web.config" />
     <Content Include=".gitignore" />
-    <None Include="Properties\PublishProfiles\Development.pubxml" />
+    <Content Include="package.json" />
     <Content Include="Views\MasterLayout.cshtml" />
     <Content Include="Views\HomeLayout.cshtml" />
     <Content Include="Views\Shared\General\_Search.cshtml" />
     <Content Include="Views\StandardLayout.cshtml" />
     <Content Include="Views\StandardWideLayout.cshtml" />
     <Content Include="Views\Shared\General\_MainContent.cshtml" />
-    <None Include="Properties\PublishProfiles\Release.pubxml" />
     <Content Include="Views\Shared\General\_SearchResults.cshtml" />
+    <Content Include="tsconfig.json" />
+    <Content Include="tslint.json" />
+    <Content Include="typings.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -143,6 +147,19 @@
       <Project>{bf566e1a-2f43-4abd-a2cd-f54bd4823c29}</Project>
       <Name>SitecoreDemo.Web.ContentSearch</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Static\scripts\ts\App\app.component.ts" />
+    <TypeScriptCompile Include="Static\scripts\ts\App\content-search.service.ts" />
+    <TypeScriptCompile Include="Static\scripts\ts\App\pagination.component.ts" />
+    <TypeScriptCompile Include="Static\scripts\ts\App\search-form.component.ts" />
+    <TypeScriptCompile Include="Static\scripts\ts\App\search-object.ts" />
+    <TypeScriptCompile Include="Static\scripts\ts\App\search-results.component.ts" />
+    <TypeScriptCompile Include="Static\scripts\ts\App\text-page-result.ts" />
+    <TypeScriptCompile Include="Static\scripts\ts\main.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\PublishProfiles\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -170,6 +187,15 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(TargetDir)$(TargetFileName)" "$(SolutionDir)..\..\Website\bin\" /Y /R
+xcopy "$(SolutionDir)..\..\Lib\Sitecore\*.dll" "$(SolutionDir)..\..\Website\bin\" /Y /R
+xcopy "$(SolutionDir)..\..\Lib\External\*.dll" "$(SolutionDir)..\..\Website\bin\" /Y /R
+xcopy "$(ProjectDir)Views\*.cshtml" "$(SolutionDir)..\..\Website\Views\" /Y /E
+xcopy "$(ProjectDir)App_Config\Include\*.config" "$(SolutionDir)..\..\Website\App_Config\Include" /Y /E
+xcopy "$(ProjectDir)Static\scripts\vendor\ang" "$(SolutionDir)..\..\Website\Static\scripts\vendor\ang" /i /e /y
+xcopy "$(ProjectDir)Static\scripts\js\*.js" "$(SolutionDir)..\..\Website\Static\scripts\js" /i /e /y</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
