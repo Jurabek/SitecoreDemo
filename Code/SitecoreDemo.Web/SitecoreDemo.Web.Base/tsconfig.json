@@ -4,16 +4,15 @@
     "experimentalDecorators": true,
     "module": "system",
     "moduleResolution": "node",
-    "noImplicitAny": false,
+    "noImplicitAny": true,
     "noEmitOnError": true,
     "removeComments": false,
     "target": "es6",
-    "outDir": "static/scripts/js"
+    "outDir": "Static/scripts/js"
   },
   "compileOnSave": true,
   "watch": true,
   "exclude": [
-    "node_modules",
-    "wwwroot"
+    "node_modules"
   ]
 }

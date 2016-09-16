@@ -108,7 +108,7 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <None Include="gulpfile.js" />
-    <Content Include="Static\scripts\js\setup.systemjs.js" />
+    <Content Include="Static\scripts\js\systemjs.config.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
