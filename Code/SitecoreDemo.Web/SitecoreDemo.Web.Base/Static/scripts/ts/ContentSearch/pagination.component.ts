@@ -1,5 +1,6 @@
 import { Component, OnInit, OnChanges, EventEmitter, Output, Input } from 'angular2/core';
 import { TextPageResult } from './text-page-result';
+import { IPaginationComponent } from './IPaginationComponent';
 
 @Component({
     selector: 'pagination',
@@ -39,7 +40,7 @@ import { TextPageResult } from './text-page-result';
     inputs: ['currentPage', 'totalItems', 'itemsPerPage'],
     outputs: ['onPaged']
 })
-export class PaginationComponent implements OnChanges {
+export class PaginationComponent implements OnChanges, IPaginationComponent {
     currentPage: number;
     totalItems: number;
     itemsPerPage: number;

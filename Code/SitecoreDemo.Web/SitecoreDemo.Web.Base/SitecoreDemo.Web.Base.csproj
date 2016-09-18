@@ -151,6 +151,8 @@
   <ItemGroup>
     <TypeScriptCompile Include="Static\scripts\ts\ContentSearch\app.component.ts" />
     <TypeScriptCompile Include="Static\scripts\ts\ContentSearch\content-search.service.ts" />
+    <TypeScriptCompile Include="Static\scripts\ts\ContentSearch\IPaginationComponent.ts" />
+    <TypeScriptCompile Include="Static\scripts\ts\ContentSearch\ISearchResultsComponent.ts" />
     <TypeScriptCompile Include="Static\scripts\ts\ContentSearch\pagination.component.ts" />
     <TypeScriptCompile Include="Static\scripts\ts\ContentSearch\search-form.component.ts" />
     <TypeScriptCompile Include="Static\scripts\ts\ContentSearch\search-object.ts" />

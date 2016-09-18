@@ -3,6 +3,7 @@ import { SearchObject } from './search-object';
 import { TextPageResult } from './text-page-result';
 import { ContentSearchService } from './content-search.service';
 import { PaginationComponent } from './pagination.component';
+import { ISearchResultsComponent } from './ISearchResultsComponent';
 
 @Component({
     selector: 'search-results',
@@ -24,7 +25,7 @@ import { PaginationComponent } from './pagination.component';
     providers: [ContentSearchService],
     directives: [PaginationComponent]
 })
-export class SearchResultsComponent implements OnInit {
+export class SearchResultsComponent implements OnInit, ISearchResultsComponent {
     textPages: TextPageResult[];
     itemsTotal: number;
     pagesTotal: number;
@@ -46,7 +47,7 @@ export class SearchResultsComponent implements OnInit {
         this.search(page);
     }
 
-    search(page: number) {
+    search(page: number): void {
         this.keyword = this.getKeyword();
         if (this.keyword !== '' && this.keyword !== undefined) {
             this.contentSearchService.lang()

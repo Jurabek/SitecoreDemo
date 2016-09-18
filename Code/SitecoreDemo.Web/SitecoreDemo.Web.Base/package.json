@@ -3,11 +3,15 @@
   "version": "1.0.0",
   "devDependencies": {
     "angular2": "^2.0.0-beta.17",
+    "codelyzer": "0.0.28",
     "es6-promise": "^3.3.0",
     "es6-shim": "^0.35.1",
     "gulp": "^3.9.1",
+    "gulp-tslint": "^6.1.1",
     "requirejs": "^2.3.1",
     "rxjs": "^5.0.0-beta.12",
-    "systemjs": "^0.19.38"
+    "systemjs": "^0.19.38",
+    "tslint": "^3.15.1",
+    "typescript": "^1.8.10"
   }
 }
